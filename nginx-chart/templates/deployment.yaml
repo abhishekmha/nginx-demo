@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Values.metadata.namespace }}
 spec:
   selector:
-    matachLabels:
+    matchLabels:
        app: {{ .Values.spec.selector.app }}
   replicas: {{ .Values.spec.replicas }}
   template:
@@ -15,6 +15,6 @@ spec:
      spec:
        containers:    
        - name: {{ .Values.spec.containers.name }}
-         image: "{{ .Values.spec.image.name }} : {{ .Values.spec.image.tag }}"
+         image: "{{ .Values.spec.image.name }}:{{ .Values.spec.image.tag }}"
          imagePullPolicy: Always  
 
