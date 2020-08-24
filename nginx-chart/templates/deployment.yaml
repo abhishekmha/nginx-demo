@@ -16,5 +16,7 @@ spec:
        containers:    
        - name: {{ .Values.spec.containers.name }}
          image: "{{ .Values.spec.image.name }}:{{ .Values.spec.image.tag }}"
-         imagePullPolicy: Always  
+         imagePullPolicy: Always
+         ports: 
+         - containerPort: 80
 
