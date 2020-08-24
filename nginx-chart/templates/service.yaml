@@ -8,11 +8,8 @@ spec:
   type: {{ .Values.service.type }}
   ports:
    - port: {{ .Values.service.port }}
-     targetPort: http
-     protocol: TCP
-     name: http
   selector:
-        app.kubernetes.io/name: {{  .Values.spec.selector.app  }}
-        app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/name: {{  .Values.spec.selector.app  }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
 
 
